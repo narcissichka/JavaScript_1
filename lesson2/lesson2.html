@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson2</title>
+    <script>
+        alert('Задание 1. Смотрите в консоли');
+        var a = 1, b = 1, c, d;
+        console.log('Вводные данные: \n' + 'a = ' + a + ', b = ' + b);
+
+        c = ++a;
+        console.log('c = ++a;' + ' -> c = ' + c);
+        console.log('Такой результат получили, потому что префиксный инкремент переменной а выполнится раньше, чем присваивание значения переменной с');
+
+        d = b++;
+        console.log('d = b++;' + ' -> d = ' + d);
+        console.log('Такой результат получили, потому что присваивание значения переменной d выполнится раньше, чем постфиксный инкремент b, таким образом d будет равняться b до увеличения её значения на 1');
+
+        c = (2 + ++a);
+        console.log('c = (2 + ++a);' + ' -> c = ' + c);
+        console.log('Такой результат получили, потому что после инкремента в первом выражении а было равно 2, в этом примере мы сначала выполняем инкремент а (префиксная форма) и теперь а = 3, потом добавляем к этому значению 2');
+
+
+        d = (2 + b++);
+        console.log('d = (2 + b++);' + ' -> d = ' + d);
+        console.log('Такой результат получили, потому что после инкремента во втором выражении b теперь равно 2, в этом примере мы сначала добавляем 2 к тексущему значению b (то есть к 2), а потом уже добавляем 1 к b (постфиксный инкремент)');
+
+        console.log('a = ' + a + '; b = ' + b);
+        console.log('Такой результат получили, потому что в предыдущих примерах мы выполнили по два инкремента переменных a и b, к этой строчке программы уже были выполнены и префиксный и постфиксный инкременты переменных');
+
+        alert('Задание 2. Смотрите в консоли');
+        a = 2;
+        console.log('\nВводные данные: \n' + 'a = ' + a);
+        var x = 1 + (a *= 2);
+        console.log('x = 1 + (a *= 2);' + ' -> x = ' + x);
+        console.log('Такой результат получили, потому что оператор *= означает сокращенную запись а = а*2. То есть сначала выполнится умножение значения а на 2, а потом к полученному а (а = 4) добавится 1');
+
+        alert('Задание 3');
+        a = parseInt(Math.random() * 40 - 20);
+        b = parseInt(Math.random() * 40 - 20);
+        alert('a = ' + a + '; b = ' + b);
+        if (a >= 0 && b >= 0) {
+            alert(a + ' - ' + b + ' = ' + sub(a, b));
+        } else if (a < 0 && b < 0) {
+            alert(a + ' * ' + b + ' = ' + mul(a, b));
+        } else {
+            alert(a + ' + ' + b + ' = ' + add(a, b));
+        }
+
+        alert('Задание 4. Способ 1. Switch');
+        let str = '';
+        a = parseInt(Math.random() * 15);
+        alert('a = ' + a);
+        switch (a) {
+            case 0:
+                str += a++ + ' ';
+            case 1:
+                str += a++ + ' ';
+            case 2:
+                str += a++ + ' ';
+            case 3:
+                str += a++ + ' ';
+            case 4:
+                str += a++ + ' ';
+            case 5:
+                str += a++ + ' ';
+            case 6:
+                str += a++ + ' ';
+            case 7:
+                str += a++ + ' ';
+            case 8:
+                str += a++ + ' ';
+            case 9:
+                str += a++ + ' ';
+            case 10:
+                str += a++ + ' ';
+            case 11:
+                str += a++ + ' ';
+            case 12:
+                str += a++ + ' ';
+            case 13:
+                str += a++ + ' ';
+            case 14:
+                str += a++ + ' ';
+            case 15:
+                str += a + ' ';
+            default:
+                alert(str);
+        }
+        alert('Задание 4. Способ 2. Рекурсия');
+        str = '';
+        a = parseInt(Math.random() * 15);
+        alert('a = ' + a);
+        function outputNumbers(n) {
+            str += n + ' ';
+            if (n == 15) {
+                return 0;
+            }
+            outputNumbers(++n);
+        }
+        outputNumbers(a);
+        alert(str);
+
+        //Задание 5
+        function add(n, m) {
+            return n + m;
+        }
+        function sub(n, m) {
+            return n - m;
+        }
+        function mul(n, m) {
+            return n * m;
+        }
+        function div(n, m) {
+            return n / m;
+        }
+
+        alert('Задание 6');
+        a = +prompt('Введите значение переменной 1');
+        b = +prompt('Введите значение переменной 2');
+        str = prompt('Введите операцию');
+        alert(a + ' ' + str + ' ' + b + ' = ' + mathOperation(a, b, str));
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case '+':
+                    return add(arg1, arg2);
+                case '-':
+                    return sub(arg1, arg2);
+                case '*':
+                    return mul(arg1, arg2);
+                case '/':
+                    return div(arg1, arg2);
+                default:
+                    return 'Error: incorrect input';
+            }
+        }
+
+        alert('Задание 7. Смотрите в консоли');
+        console.log('Результаты сравнения:');
+        console.log('null == 0 -> ' + (null == 0));
+        console.log('null > 0 -> ' + (null > 0));
+        console.log('null < 0 -> ' + (null < 0));
+        console.log('null >= 0 -> ' + (null >= 0));
+        console.log('null <= 0 -> ' + (null <= 0));
+        console.log('Так происходит с равенством, потому что абстрактный алгоритм сравнения для равенств по умолчанию возвращает значение false, а операнды 0 и null в одном выражении не предусмотрены ни одной из веток этого алгоритма.\n'
+            + 'Строгие неравенства обрабатываются абстрактным алгоритмом сравнения для отношений. В результате выполнения этого алгоритма получим false потому что null будет приведен к значнию +0, а +0 == 0.\n'
+            + 'Согласно спецификации языка JS, если строгое неравенство вернуло значение false для этих операндов, то нестрогое неравенство вернет true. Вероятно, это сделано для оптимизации вычислений.\n'
+            + 'http://javascript.ru/ecma/part11#a-11.8.4');
+
+        alert('Задание 8')
+        a = +prompt('Введите число для возведения в степень');
+        b = +prompt('Введите степень числа');
+        alert(a + '^' + b + ' = ' + power(a, b));
+        function power(val, pow) {
+            if (pow == 0) {
+                return 1;
+            } else if (pow == 1) {
+                return val;
+            }
+            return val * power(val, --pow);
+        }
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
