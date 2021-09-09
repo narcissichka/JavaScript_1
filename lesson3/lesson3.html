@@ -1,0 +1,70 @@
+<script>
+    //task 1
+    alert('See the first task in the console');
+    var i = 1, j, counter = 0, str = '';
+    while (i < 101) {
+        j = 1;
+        counter = 0;
+        while (j <= i) {
+            if (i % j == 0) {
+                counter++;
+            }
+            j++;
+        }
+        if (counter == 2) {
+            str += i + ' ';
+        }
+        i++;
+    }
+    console.log('Prime numbers from 0 to 100: ' + str);
+    console.log('');
+    //task 2, 3
+    alert('See the second/third task in the console');
+    var cart = [
+        {
+            title: 'shirt',
+            price: 200,
+            count: 1
+        },
+        {
+            title: 'hat',
+            price: 50,
+            count: 3
+        },
+        {
+            title: 'shoes',
+            price: 500,
+            count: 2
+        },
+        {
+            title: 'trousers',
+            price: 300,
+            count: 1
+        }
+    ];
+    console.log('Cart:');
+    for (var index in cart) {
+        console.log('Title: ' + cart[index].title + '\nPrice: ' + cart[index].price + '\nAmount: ' + cart[index].count);
+    }
+    console.log('Total Price: ' + countBasketPrice(cart));
+    console.log('');
+    function countBasketPrice(basket) {
+        var totalPrice = 0;
+        for (var item of basket) {
+            totalPrice += item.price * item.count;
+        }
+        return totalPrice;
+    }
+
+    //task 4
+    alert('See the fourth task in the console');
+    for (i = 0; i < 10; console.log(i++));
+    console.log('');
+    //task 5
+    alert('See the fifth task in the console');
+    str = '';
+    for (i = 0; i < 21; i++) {
+        str += '*';
+        console.log(str);
+    }
+</script>
