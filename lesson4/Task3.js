@@ -49,7 +49,7 @@ function gameMillionaire() {
         else {
             if (mistakes == 1) {
                 alert('Ошибку Вы допустили в вопросе:\n' + mistakeArray[0].question + '\nПравильный ответ: ' + findAnswerByNumber(mistakeArray[0], mistakeArray[0].correctAns)
-                    + '\nВаш ответ: ' + findAnswerByNumber(mistakeArray[0], playerMistakes[0]));
+                    + 'Ваш ответ: ' + findAnswerByNumber(mistakeArray[0], playerMistakes[0]));
                 alert('Но все мы можем ошибиться, поздравляем с победой. Вы можете забрать ' + score + ' рублей');
             }
             else {
