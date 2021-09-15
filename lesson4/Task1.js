@@ -6,8 +6,12 @@ function intToObject() {
         if (exit(str)) {
             return 'Вы вышли из функции';
         }
-        else if (longInt(str)) {
-            console.log('Слишком большое число');
+        else if (isNaN(str)) {
+            console.log('Вы ввели не число');
+            str = prompt('Ошибка ввода.\nВведите число от 0 до 999 (концы промежутка включительно). Чтобы выйти введите -1')
+        }
+        else if (!checkInt(str)) {
+            console.log('Неподходящее число');
             return object;
         }
         else if (checkInt(str)) {
@@ -23,9 +27,6 @@ function checkInt(str) {
 }
 function exit(str) {
     return parseInt(str) == -1;
-}
-function longInt(str) {
-    return parseInt(str) > 999;
 }
 function fillObject(str, object) {
     if (str.length == 3) {

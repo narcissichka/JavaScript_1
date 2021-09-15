@@ -22,7 +22,7 @@ function gameMillionaire() {
     for (var quest of questions) {
         playerAnswer = getAnswer(quest, events);
         if (playerAnswer == -1)
-            break;
+            return 0;
         else if (playerAnswer == quest.correctAns) {
             score = countScore(quest, score);
             alert('Это правильный ответ! Ваша сумма: ' + score);
@@ -49,7 +49,7 @@ function gameMillionaire() {
         else {
             if (mistakes == 1) {
                 alert('Ошибку Вы допустили в вопросе:\n' + mistakeArray[0].question + '\nПравильный ответ: ' + findAnswerByNumber(mistakeArray[0], mistakeArray[0].correctAns)
-                    + 'Ваш ответ: ' + findAnswerByNumber(mistakeArray[0], playerMistakes[0]));
+                    + '\nВаш ответ: ' + findAnswerByNumber(mistakeArray[0], playerMistakes[0]));
                 alert('Но все мы можем ошибиться, поздравляем с победой. Вы можете забрать ' + score + ' рублей');
             }
             else {

@@ -26,48 +26,51 @@ var work4 = new Works('Здесь пишем текст повествовани
 
 var events, ok, answers = [], questNumber, quests = [];
 
-switch (getAnswer(work1)) {
-    case 1:
-        quests.push(work1);
-        quests.push(work2);
-        switch (getAnswer(work2)) {
-            case 1:
-            case 2:
-                quests.push(work4);
-                getAnswer(work4)
-                break;
-            case -1:
-                break;
-            default:
-                alert('Ошибка');
-        }
-        break;
-    case 2:
-        quests.push(work1);
-        quests.push(work3);
-        switch (getAnswer(work3)) {
-            case 1:
-            case 2:
-                quests.push(work4);
-                getAnswer(work4)
-                break;
-            case -1:
-                break;
-            default:
-                alert('Ошибка');
-        }
-        break;
-    case -1:
-        break;
-    default:
-        alert('Ошибка');
+gameStory();
+function gameStory() {
+    switch (getAnswear(work1)) {
+        case 1:
+            quests.push(work1);
+            quests.push(work2);
+            switch (getAnswear(work2)) {
+                case 1:
+                case 2:
+                    quests.push(work4);
+                    getAnswear(work4)
+                    break;
+                case -1:
+                    return 0;
+                default:
+                    alert('Ошибка');
+            }
+            break;
+        case 2:
+            quests.push(work1);
+            quests.push(work3);
+            switch (getAnswear(work3)) {
+                case 1:
+                case 2:
+                    quests.push(work4);
+                    getAnswear(work4)
+                    break;
+                case -1:
+                    return 0;
+                default:
+                    alert('Ошибка');
+            }
+            break;
+        case -1:
+            return 0;
+        default:
+            alert('Ошибка');
+    }
+    alert('Спасибо за игру');
+
+    questNumber = +prompt('Введите номер вопроса (1-3), ответ на который хотели бы посмотреть. Чтобы выйти напишите -1');
+    displayAnswear(quests, answers, questNumber);
 }
-alert('Спасибо за игру');
 
-questNumber = +prompt('Введите номер вопроса (1-3), ответ на который хотели бы посмотреть. Чтобы выйти напишите -1');
-displayAnswer(quests, answers, questNumber);
-
-function displayAnswer(quest, answer, questNum) {
+function displayAnswear(quest, answer, questNum) {
     while (1) {
         if (questNum == -1)
             break;
@@ -103,7 +106,7 @@ function isAnswer(q, event) {
     return true;
 }
 
-function getAnswer(work) {
+function getAnswear(work) {
     do {
         ok = false;
         events = +prompt(work.question + work.var1 + work.var2 + '-1 - Выход из игры');
