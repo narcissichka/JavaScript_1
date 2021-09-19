@@ -12,18 +12,7 @@ function createDesk() {
             td.style.textAlign = 'center';
             td.style.width = '10%';
 
-            if (i % 2 != 0 && i != 9) {
-                if ((j % 2 == 0 && j != 0))
-                    td.style.backgroundColor = '#3A2E20';
-                else if (j != 9 && j != 0)
-                    td.style.backgroundColor = '#DAC2A6';
-            } else if (i % 2 == 0 && i != 0) {
-                if (j % 2 != 0 && j != 9)
-                    td.style.backgroundColor = '#3A2E20';
-                else if (j != 0 && j != 9)
-                    td.style.backgroundColor = '#DAC2A6';
-            }
-
+            td.style.backgroundColor = (i + j) % 2 == 0 ? '#DAC2A6' : '#3A2E20';
             if (i == 1 || i == 8) {
                 if (j == 1 || j == 8) {
                     td.innerHTML = '<i class="fas fa-chess-rook"></i>';
