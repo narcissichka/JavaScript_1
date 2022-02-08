@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/890dd60a78.js" crossorigin="anonymous" defer></script>
+    <script src="task1.js" defer></script>
+    <script src="task2.js" defer></script>
+    <script src="task3.js" defer></script>
+</head>
+
+<body>
+    <section class="pictures">
+        <img src="small/pic1.jpg" class="pic" id="pic1">
+        <img src="small/pic2.jpg" class="pic" id="pic2">
+        <img src="small/pic3.jpg" class="pic" id="pic3">
+        <img src="small/pic4.jpg" class="pic" id="pic4">
+    </section>
+    <section class="shop hide">
+        <div class="cart">
+            <p class="cartText">Your cart is empty yet</p>
+        </div>
+        <hr class="line">
+        <div class="catalog">
+            <div class="product" id="product1">
+                <h2 class="productHeader">Beige V-neck fatine dress with Svarovski stones</h2>
+                <img src="product/item1.jpg" class="productImg">
+                <p class="productPrice">1500$</p>
+                <button class="productButton" id="but1">Add to cart</button>
+            </div>
+            <div class="product" id="product2">
+                <h2 class="productHeader">Blue low neck chiffon dress with fancywork</h2>
+                <img src="product/item2.jpg" class="productImg">
+                <p class="productPrice">1000$</p>
+                <button class="productButton" id="but2">Add to cart</button>
+            </div>
+            <div class="product" id="product3">
+                <h2 class="productHeader">Black chamois sling-back heeled shoes</h2>
+                <img src="product/item3.jpg" class="productImg">
+                <p class="productPrice">700$</p>
+                <button class="productButton" id="but3">Add to cart</button>
+            </div>
+            <div class="product" id="product4">
+                <h2 class="productHeader">Pink collared polka-dotted synthetical dress</h2>
+                <img src="product/item4.jpg" class="productImg">
+                <p class="productPrice">550$</p>
+                <button class="productButton" id="but4">Add to cart</button>
+            </div>
+        </div>
+    </section>
+    <section class="slider hide">
+        <a href="#" class="arrows"><i class="fas fa-chevron-left"></i></a>
+        <img src="slider/1.png" class="slide hide" id="slide1">
+        <img src="slider/2.png" class="slide hide" id="slide2">
+        <img src="slider/3.png" class="slide hide" id="slide3">
+        <img src="slider/4.png" class="slide hide" id="slide4">
+        <a href="#" class="arrows"><i class="fas fa-chevron-right"></i></a>
+    </section>
+    <button class="next">Move to the next task</button>
+</body>
+<script>
+    currentTask = 0;
+    buttonNext = document.querySelector('.next');
+    tasks = document.querySelectorAll('section');
+    buttonNext.onclick = nextTask;
+    function nextTask() {
+        tasks[currentTask++].remove();
+        tasks[currentTask].classList.remove('hide');
+        tasks[currentTask].classList.add('show');
+        if (currentTask == 2) buttonNext.remove();
+    }
+</script>
+
+</html>
